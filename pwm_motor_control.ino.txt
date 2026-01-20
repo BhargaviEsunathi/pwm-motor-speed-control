@@ -1,0 +1,22 @@
+// PWM Motor Speed Control using Arduino
+
+int motorPin = 9;   // PWM pin
+int speedValue = 0;
+
+void setup() {
+  pinMode(motorPin, OUTPUT);
+}
+
+void loop() {
+  // Increase motor speed
+  for (speedValue = 0; speedValue <= 255; speedValue += 5) {
+    analogWrite(motorPin, speedValue);
+    delay(50);
+  }
+
+  // Decrease motor speed
+  for (speedValue = 255; speedValue >= 0; speedValue -= 5) {
+    analogWrite(motorPin, speedValue);
+    delay(50);
+  }
+}
